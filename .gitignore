@@ -1,0 +1,7 @@
+# builds
+build
+cmake-build-*
+/target/
+
+# IDEsgit
+.idea/
