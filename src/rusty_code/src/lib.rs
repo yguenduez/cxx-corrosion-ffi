@@ -1,29 +1,32 @@
-mod modbus;
+mod fizz_buzz;
 
-use modbus::ModbusSender;
+use fizz_buzz::FizzBuzz;
 
 #[cxx::bridge]
 mod ffi {
     extern "Rust" {
         type MyRustType;
-        fn give_me_42(self: &MyRustType)->usize;
+        fn give_me_42(self: &MyRustType) -> usize;
         fn new_type() -> Box<MyRustType>;
 
-        type ModbusSender;
-        fn new_modbus_sender() -> Box<ModbusSender>;
-        fn send(self: &ModbusSender, bytes: Vec<u8>);
+        type FizzBuzz;
+        fn to_fizz_buzz(self: &FizzBuzz, input: u32) -> String;
+        fn new_fizz_buzz() -> Box<FizzBuzz>;
     }
 }
 
-fn new_type() -> Box<MyRustType>{
+fn new_type() -> Box<MyRustType> {
     Box::new(MyRustType)
 }
-fn new_modbus_sender() -> Box<ModbusSender> {Box::new(ModbusSender)}
+
+fn new_fizz_buzz() -> Box<FizzBuzz>{
+    Box::new(FizzBuzz)
+}
 
 struct MyRustType;
 
-impl MyRustType{
-    fn give_me_42(&self) -> usize{
+impl MyRustType {
+    fn give_me_42(&self) -> usize {
         42
     }
 }

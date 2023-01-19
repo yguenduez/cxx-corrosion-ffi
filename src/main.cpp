@@ -5,10 +5,7 @@ int main() {
   auto myType = new_type();
   std::cout << myType->give_me_42();
 
-  auto mysender = new_modbus_sender();
-
-  const auto myBytes = ::rust::Vec<uint8_t>{};
-  mysender->send(myBytes);
+  auto fizzbuzzer = new_fizz_buzz();
 
   return 0;
 }
