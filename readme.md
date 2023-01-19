@@ -6,12 +6,13 @@ the [cxx](https://cxx.rs/) (rust+cpp) and [corrision](https://github.com/corrosi
 
 ## About
 
-The rust code `rusty_code/src/lib.rs` contains a class (rust: struct) with a method.
-The cxx crate generates the headers and cpp files for the rust code.
+The rust code `rusty_code/src/lib.rs` contains classes (rust: struct) with methods.
+The cxx crate generates the headers for the rust code.
 The corrosion crate marries those generated files with cmake.
+In the end you only have to link against that cmake target (static or shared lib) coming from rust.
 
-Now you can define a cpp executable (main.cpp), that links against the rust cmake
-lib target generated from the corrosion crate.
+There is a cpp executable (main.cpp), that links against the rust cmake
+lib target generated from the above process.
 
 ## Prerequisites
 
