@@ -22,7 +22,7 @@ The corrosion crate exports cmake targets for your rust library, that is generat
 corrosion_add_cxxbridge(rusty_bridge CRATE rusty_code MANIFEST_PATH rusty_code FILES lib.rs)
 ```
 
-where `rusty_bridge` is the name of your target.
+where `rusty_bridge` is the name of your rust library target.
 
 In the end you only have to link against that cmake target (static or shared lib) coming from rust, 
 e.g.(`main_cpp` being your C++ executable):
@@ -62,8 +62,8 @@ make -j<number of threads>
 
 IDE (CLion):  
   - if you are using CLion like me, just load the top level `CMakeLists.txt`. with the cmake arguments being *--preset default*.
+  - After that, just built it.
 
-After that, just built it.
 
 ## Tested on
 
