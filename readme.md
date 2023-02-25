@@ -37,11 +37,15 @@ lib target generated from the above process.
 
 ## Prerequisites
 
-Having [Rust](https://www.rust-lang.org/tools/install) installed.
+- Having [Rust](https://www.rust-lang.org/tools/install) installed.
+- Having Cxx-Bridge CLI installed (for cxx builds without cargo - we build it with cmake!)
+  ```shell
+  cargo install cxxbridge-cmd
+  ```
 
 ### On Windows
 
-If you are building on windows like me you need the correct toolchain
+If you are building on windows you need the correct toolchain
 to compile the rust code.
 There just use rustup (shipped with rust)
 
