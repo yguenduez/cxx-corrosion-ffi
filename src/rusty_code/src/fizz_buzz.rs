@@ -34,6 +34,7 @@ mod tests {
         assert_eq!("Fizz".to_string(), result);
     }
 
+    #[test]
     fn on_4_return_4_as_string() {
         // given
         let fizz_buzzer = FizzBuzz;
