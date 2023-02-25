@@ -1,4 +1,4 @@
-#include "rusty_bridge/lib.h"
+#include "rusty_lib/lib.h"
 
 #include <iostream>
 #include <string>
