@@ -19,10 +19,10 @@ module. Outside of that, you can write idiomatic Rust code without to use any `u
 The corrosion crate exports cmake targets for your rust library, that is generated with cxx a priori, like so:
 
 ```cmake
-corrosion_add_cxxbridge(rusty_bridge CRATE rusty_code MANIFEST_PATH rusty_code FILES lib.rs)
+corrosion_add_cxxbridge(rusty_lib CRATE rusty_code MANIFEST_PATH rusty_code FILES lib.rs)
 ```
 
-where `rusty_bridge` is the name of your rust library target.
+where `rusty_lib` is the name of your rust library target.
 
 In the end you only have to link against that cmake target (static or shared lib) coming from rust, 
 e.g.(`main_cpp` being your C++ executable):
@@ -58,14 +58,12 @@ rustup target add --toolchain stable-x86_64-pc-windows-msvc x86_64-pc-windows-gn
 Manually:
 
 ```
-mkdir build
-cd build
-cmake ..
-make -j<number of threads>
+cmake --preset default
+cmake --build --preset default
 ```
 
 IDE (CLion):  
-  - if you are using CLion like me, just load the top level `CMakeLists.txt`. with the cmake arguments being *--preset default*.
+  - if you are using CLion like me, just load the top level `CMakeLists.txt`.
   - After that, just built it.
 
 
@@ -75,3 +73,7 @@ IDE (CLion):
   - Manjaro (arch linux): `Linux 5.13.19-2-MANJARO x86_64`
 - Windows 10
   - with MinGW
+
+## Originated From
+
+[trondhe/rusty_cmake](https://github.com/trondhe/rusty_cmake)
