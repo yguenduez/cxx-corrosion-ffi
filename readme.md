@@ -46,7 +46,7 @@ lib target generated from the above process.
 ### On Windows
 
 If you are building on windows you need the correct toolchain
-to compile the rust code.
+to compile the rust code with the minGW compiler in CLion.
 There just use rustup (shipped with rust)
 
 ```
@@ -70,9 +70,9 @@ IDE (CLion):
 ## Tested on
 
 - Linux:
-  - Manjaro (arch linux): `Linux 5.13.19-2-MANJARO x86_64`
+  - Manjaro (arch linux, built manually): `Linux 5.13.19-2-MANJARO x86_64`
 - Windows 10
-  - with MinGW
+  - with MinGW (CLion bundled)
 
 ## Originated From
 
