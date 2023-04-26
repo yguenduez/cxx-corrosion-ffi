@@ -17,5 +17,10 @@ int main() {
     std::cout << std::to_string(miniBlob) << std::endl;
   }
 
+  // Sender reqwest
+//  auto sender = new_sender();
+//  const auto rust_lang_result = sender->get_from_rust_lang();
+//  std::cout << std::string{rust_lang_result} << std::endl;
+
   return 0;
 }

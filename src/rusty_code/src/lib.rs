@@ -1,6 +1,8 @@
 mod fizz_buzz;
+mod blocking_http_sender;
 
 use fizz_buzz::FizzBuzz;
+use blocking_http_sender::Sender;
 
 #[cxx::bridge]
 mod ffi {
@@ -21,6 +23,12 @@ mod ffi {
     // Functions: implemented in either language - callable from the other
     extern "Rust" {
         fn new_fizz_buzz() -> Box<FizzBuzz>;
+        fn new_sender() -> Box<Sender>;
+    }
+
+    extern "Rust" {
+        type Sender;
+        fn get_from_rust_lang(&self) -> String;
     }
 }
 
@@ -32,4 +40,7 @@ fn function_taking_a_blob(datablob: &DataBlob) -> usize {
 
 fn new_fizz_buzz() -> Box<FizzBuzz> {
     Box::new(FizzBuzz)
+}
+fn new_sender() -> Box<Sender> {
+    Box::new(Sender)
 }
